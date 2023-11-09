@@ -1,0 +1,15 @@
+node_modules
+*.png
+node_modules/
+screenshots/
+videos/
+mochawesome-report/
+.vscode/settings.json
+reports/
+find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
+.idea
+logs/
+xunit.xml
+package-lock.json
+.DS_Store
+/cypress/downloads/
