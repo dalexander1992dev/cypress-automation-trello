@@ -1,4 +1,5 @@
 import StatusCodeValidator from '../../../helpers/status-code-validators'
+import { TestTags } from '../../../helpers/tests-tags-constants'
 import { BoardsApiHelper } from '../helpers/boards-api-helper'
 
 const boardsApiHelper = new BoardsApiHelper()
@@ -14,7 +15,7 @@ describe('Boards Test Suite',
 
         it('Create a Board',
         {
-           
+           tags: [ TestTags.BOARDS ]
         },
         () => {
             boardsApiHelper.createBoard().then((createRequest) => {
