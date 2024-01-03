@@ -10,6 +10,8 @@ module.exports = defineConfig({
  reporter: 'cypress-mochawesome-reporter',
 
   e2e: {
+    experimentalModifyObstructiveThirdPartyCode: true,
+    
     setupNodeEvents(on, config) {
       // implement node event listeners here
       config.env.envCredentials = getEnv(config.env.envSelected)

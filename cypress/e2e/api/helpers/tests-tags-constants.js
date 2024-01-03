@@ -1,5 +1,6 @@
 export const TestTags = {
-    BOARDS: '@boards',
     SMOKE_TEST: '@smoke',
-    REGRESSION_TEST: '@regression'
+    REGRESSION_TEST: '@regression',
+    BOARDS: '@boards',
+    LOGIN: '@login',
 }
