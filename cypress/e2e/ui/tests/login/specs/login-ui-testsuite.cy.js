@@ -1,3 +1,6 @@
+import { LoginPage } from "../pages/login-page"
+
+const loginPage = new LoginPage()
 
 describe('Login Test Suite',
     {},
@@ -8,15 +11,16 @@ describe('Login Test Suite',
         
     },
     () => {
-        cy.visit('https://trello.com/')
-        
+       
         //Atlassian page navigation
-        cy.get('div.Buttonsstyles__ButtonGroup-sc-1jwidxo-3.jnMZCI > a:nth-child(1)').should("be.visible").click()
+        loginPage.navigateToLoginPage()
+
+       loginPage.navigateToGoogleSignInPage()
         
-        cy.origin('https://id.atlassian.com/', () => {
+        /* cy.origin('https://id.atlassian.com/', () => {
             //Trello page navigation
              cy.get('[data-testid="social-login-button-row"] button[id="google-auth-button"]').should("be.visible").click()
-         })
+        })*/
         })
     }
 )

@@ -12,6 +12,7 @@ module.exports = defineConfig({
  viewportWidth: 1440,
  viewportHeight: 900,
   e2e: {
+    experimentalOriginDependencies: true,
     experimentalModifyObstructiveThirdPartyCode: true,
     
     setupNodeEvents(on, config) {
