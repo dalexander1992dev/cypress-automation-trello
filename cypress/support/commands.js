@@ -1,4 +1,5 @@
 import ApiCalls from "../e2e/api/helpers/api-calls"
+import { loginHandler } from "./login-handler"
 
 const apiCalls = new ApiCalls()
 // ***********************************************
@@ -40,4 +41,8 @@ Cypress.Commands.add('deleteRequest', (endpoint) => {
 
 Cypress.Commands.add('putRequest', (endpoint, body) => {
     return apiCalls.put(endpoint, body)
+})
+
+Cypress.Commands.add('uiLogin', (credentials) => {
+    loginHandler(credentials)
 })
