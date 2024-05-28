@@ -1,8 +1,10 @@
-const app = require('./app.json')
+const credentials = require('./dev-credentials.json')
 
 exports.getEnv = function(envSelected){
+
     let environmentList = {
-        app: app,
+        'dev': credentials
     }
-    return environmentList[envSelected] || environmentList.app
+    console.log('env selected: '+ envSelected)
+    return (environmentList[envSelected] || environmentList['dev'])
 }
