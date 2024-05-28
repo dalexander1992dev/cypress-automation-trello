@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "npx cypress run --env envSelected=dev"
+    "dev": "npx cypress run --env envSelected=dev",
+    "dev-open": "npx cypress open --env envSelected=dev"
   },
   "devDependencies": {
     "@cypress/grep": "^4.0.1",

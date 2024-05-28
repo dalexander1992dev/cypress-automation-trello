@@ -1,6 +1,5 @@
 import { LoginLocators } from "../constants/login-ui-contants"
 import { ButtonComponent } from "../../../components/button-component" 
-import { InputComponent } from "../../../components/input-component"
 
 export class LoginPage {
 
@@ -11,15 +10,17 @@ export class LoginPage {
     login(credentials){
         cy.visit('https://trello.com/')
         this.LoginButton.click()
-        //CONST Y ARGUMENTOS
+        
+        console.log('User credentials: '+ JSON.stringify(credentials))
 
-        cy.origin('https://id.atlassian.com',() => {
+        cy.origin('https://id.atlassian.com',{ args:{ credentials } }, ({ credentials }) => {
             cy.get('[data-testid="username"]').type(credentials.username)
             cy.contains('Continue').click()
             cy.get('[data-testid="password-container"] input[data-testid="password"]').type(credentials.password)
             cy.get('#login-submit').click({force: true})
             })
     }
+    
     navigateToLoginPage(){
         cy.visit('https://trello.com/')
         this.LoginButton.click()
