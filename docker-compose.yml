@@ -1,23 +1,12 @@
 version: '3.8'
 
 services:
-  cypress-edge:
-    #container_name: cypress-edge
+  cypress-electron:
+    container_name: cypress-electron
     image: cypress-image
-    environment:
-      - envSelected=dev
-    command: npx cypress run --env envSelected=dev --browser edge
+    command: npx cypress run --env envSelected=dev --browser electron
 
   cypress-firefox:
-    #container_name: cypress-firefox
+    container_name: cypress-firefox
     image: cypress-image
-    environment:
-      - envSelected=dev
     command: npx cypress run --env envSelected=dev --browser firefox
-
-  cypress-chrome:
-    #container_name: cypress-chrome
-    image: cypress-image
-    environment:
-      - envSelected=dev
-    command: npx cypress run --env envSelected=dev --browser chrome

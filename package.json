@@ -4,7 +4,10 @@
     "dev-open": "npx cypress open --env envSelected=dev",
     "cy:run:dev:firefox":  "npx cypress open --env envSelected=dev --browser firefox",
     "cy:run:dev:chrome":  "npx cypress open --env envSelected=dev --browser chrome",
-    "cy:run:dev:edge":  "npx cypress open --env envSelected=dev --browser edge"
+    "cy:run:dev:edge":  "npx cypress open --env envSelected=dev --browser edge",
+    "cy:run:firefox": "npx cypress run --browser firefox",
+    "cy:run:chrome": "npx cypress run --browser chrome",
+    "cy:run:edge": "npx cypress run --browser edge"
   },
   "devDependencies": {
     "@cypress/grep": "^4.0.1",
