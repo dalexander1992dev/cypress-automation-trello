@@ -18,11 +18,9 @@ module.exports = defineConfig({
     
     setupNodeEvents(on, config) {
 
-      // implement node event listeners here
-      console.log('comment from cypress.config.js file: ' + config.env.envSelected)
-      
-      config.env.envCredentials = getEnv(config.env.envSelected)
+      config.env.envCredentials = getEnv(config.env.envSelected)  
       config.env.credentials = getEnv(config.env.envSelected.credentials)
+    
       console.log('Print from cypress.config.js: '+JSON.stringify(config.env.credentials))
       require('@cypress/grep/src/plugin')(config);
       require('cypress-mochawesome-reporter/plugin')(on);
