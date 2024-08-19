@@ -17,8 +17,7 @@ RUN npm install
 COPY . .
 
 # Run Cypress tests with the specified environment variable
-#CMD ["npx", "cypress", "run", "--env", "envSelected=dev"]
-#CMD ["npm", "run","cy:run:dev:firefox"]
-# CMD ["npx","cypress","run", "--env", "envSelected=dev", "--browser", "firefox"]
-#CMD ["npx","cypress","run",  "--browser", "firefox"]
+CMD ["npx", "cypress", "run", "--env", "envSelected=dev"]
+
+# Verifying cypress
 RUN npx cypress verify
