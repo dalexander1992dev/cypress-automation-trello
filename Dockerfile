@@ -1,5 +1,5 @@
 # Base image
-FROM cypress/included:cypress-13.9.0-node-20.12.2-chrome-124.0.6367.155-1-ff-125.0.3-edge-124.0.2478.80-1
+FROM cypress/included:13.13.3
 
 # Set working directory
 WORKDIR /e2e
