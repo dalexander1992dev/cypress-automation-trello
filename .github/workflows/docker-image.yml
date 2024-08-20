@@ -1,14 +1,13 @@
-name: Cypress Test in custom container
-on: [push]
-jobs:
- cypress-test:
-   runs-on: ubuntu-20.04
-   name: Cypress Tests on docker container
-   # Cypress Docker image with Chrome v78
-   # and Firefox v70 pre-installed
-   container: cypress/included:cypress-13.13.3-node-20.16.0-chrome-127.0.6533.119-1-ff-129.0.1-edge-127.0.2651.98-1
-   steps:
-     - uses: actions/checkout@v2
-     - uses: cypress-io/github-action@v4
-       with:
-         browser: chrome
+stages:
+  - test
+
+test:
+  image: cypress/browsers:node-20.14.0-chrome-126.0.6478.114-1-ff-127.0.1-edge-126.0.2592.61-1
+  stage: test
+  script:
+    # install dependencies
+    - npm ci
+    # start the server in the background
+    - npm start &
+    # run Cypress tests
+    - npx cypress run --browser firefox
