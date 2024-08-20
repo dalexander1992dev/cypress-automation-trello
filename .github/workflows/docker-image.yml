@@ -1,19 +1,14 @@
-name: Cypress Tests using Cypress Docker Image
-
-on: push
-
+name: Cypress Tests
+on: [push]
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
-    container:
-      image:  cypress/included:cypress-13.13.3-node-20.16.0-chrome-127.0.6533.119-1-ff-129.0.1-edge-127.0.2651.98-1
-      options: --user 1001
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          build: npm run build
-          start: npm start
-          browser: chrome
+ Cypress-Test:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout GitCode
+       uses: actions/checkout@v2
+ 
+     - name: Run Cypress Test
+       uses: cypress-io/github-action@v4
+       with:
+         command: npx cypress run
+         browser: chrome
