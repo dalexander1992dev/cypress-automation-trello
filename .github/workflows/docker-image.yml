@@ -1,30 +1,21 @@
-name: Cypress CI
+name: Run Cypress Tests using Cypress Docker Image
 
-on:
-  push:
-    branches:
-      - git-actions
-  pull_request:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-24.04
+cypress-run:
+runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+# specify the cypress contained with node
+container: cypress/browsers:node12.18.3-chrome87-ff82
+steps:
+— name: Checkout
+uses: actions/checkout@v2
 
-      - name: Set up Docker Compose
-        run: docker-compose up -d
-
-      - name: Run Cypress tests
-        run: docker-compose exec cypress-electron npx cypress run --env envSelected=dev
-
-      - name: Archive test results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-results
-          path: cypress/reports
+# Install NPM dependencies,
+# and run all Cypress tests
+— name: Cypress run
+uses: cypress-io/github-action@v4
+with:
+# Specify Browser since container image is compiled with chrome
+browser: Chrome
