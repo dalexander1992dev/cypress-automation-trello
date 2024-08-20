@@ -16,4 +16,4 @@ jobs:
     - name: Run test with Docker Compose   
       run: |
         echo --- Running test cases ---
-        docker-compose -f ./cypress-trello/docker-compose.yml -p 
+        docker-compose -f "docker-compose.yml" up
