@@ -7,7 +7,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Cypres Install
-      comand: npm install
+      run: npm install
     - name: Cypress run   
       uses: cypress-io/github-action@v4
       with:
