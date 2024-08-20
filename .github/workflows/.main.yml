@@ -9,7 +9,7 @@ jobs:
     - name: Cypres Install
       run: npm install
     - name: Build the stack
-      run: docker-compose -f up
+      run: docker-compose -f docker-compose.yml up
     #- name: Cypress run   
     #  uses: cypress-io/github-action@v4
     #  with:
