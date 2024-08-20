@@ -7,11 +7,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Cypres Install
-      run: npm install
+      comand: npm install
     - name: Cypress run   
       uses: cypress-io/github-action@v4
       with:
         config-file: cypress.config.js
-        compose-file: "./docker-compose.yml"
-        #command: npx cypress run --env envSelected=dev
+        command: npx cypress run --env envSelected=dev
       
