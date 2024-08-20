@@ -5,16 +5,15 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    # specify the cypress contained with node
     container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
-      — name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
 
       # Install NPM dependencies,
       # and run all Cypress tests
-      — name: Cypress run
+      - name: Cypress run
         uses: cypress-io/github-action@v4
       with:
         # Specify Browser since container image is compiled with chrome
-        browser: Chrome
+        browser: chrome
