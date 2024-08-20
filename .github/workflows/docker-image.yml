@@ -16,8 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Run docker-compose
-        uses: docker-compose up
+      - name: Set up Docker Compose
+        run: docker-compose up -d
+
+      - name: Run Cypress tests
+        run: docker-compose exec cypress-electron npx cypress run --env envSelected=dev
 
       - name: Archive test results
         if: always()
