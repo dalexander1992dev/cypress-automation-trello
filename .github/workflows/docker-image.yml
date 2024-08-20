@@ -10,32 +10,14 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: macos-12
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Set up Docker Compose
-        run: sudo apt-get update && sudo apt-get install docker-compose -y
-
-      - name: Build and run Cypress Electron
-        run: docker-compose up -d --build cypress-electron
-
-      - name: Run Cypress Electron tests
-        run: docker-compose logs -f cypress-electron
-
-      - name: Build and run Cypress Firefox
-        run: docker-compose up -d --build cypress-firefox
-
-      - name: Run Cypress Firefox tests
-        run: docker-compose logs -f cypress-firefox
-
-      - name: Stop Docker Compose
-        run: docker-compose down
+      - name: Run docker-compose
+        uses: docker-compose up -d
 
       - name: Archive test results
         if: always()
