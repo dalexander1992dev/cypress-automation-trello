@@ -13,7 +13,7 @@ jobs:
       with:
         config-file: cypress.config.js
         command: npx cypress run --env envSelected=dev
-     - name: Run test with Docker Compose   
-       run: |
+    - name: Run test with Docker Compose   
+      run: |
         echo --- Running test cases ---
         docker-compose -f ./cypress-trello/docker-compose.yml -p 
