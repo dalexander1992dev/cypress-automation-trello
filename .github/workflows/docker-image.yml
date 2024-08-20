@@ -14,7 +14,7 @@ jobs:
       # Install NPM dependencies,
       # and run all Cypress tests
       — name: Cypress run
-      uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v4
       with:
         # Specify Browser since container image is compiled with chrome
         browser: Chrome
