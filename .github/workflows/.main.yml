@@ -4,7 +4,7 @@ jobs:
  cypress-test:
    runs-on: ubuntu-latest
    steps:
-    - name:  Checkout
+    - name: Checkout
       uses: actions/checkout@v2
     - name: Install modules
       uses: npi ci 
