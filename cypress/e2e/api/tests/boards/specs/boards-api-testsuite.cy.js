@@ -5,7 +5,7 @@ import { BoardsApiHelper } from '../helpers/boards-api-helper'
 const boardsApiHelper = new BoardsApiHelper()
 const statusCodeValidator = new StatusCodeValidator()
 
-describe('Boards Test Suite',
+describe('API - Boards Test Suite',
     {},
     () => {
 
@@ -13,7 +13,7 @@ describe('Boards Test Suite',
             boardsApiHelper.deleteAllBoards()
         })
 
-        it('Create a Board',
+        it('API - Create a Board',
         {
            tags: [ TestTags.BOARDS ]
         },
@@ -25,7 +25,7 @@ describe('Boards Test Suite',
         }
         )
 
-        it('Get a Board',
+        it('API - Get a Board',
             {
                
             },
@@ -40,7 +40,7 @@ describe('Boards Test Suite',
             }
         )
 
-        it('Update a Board',
+        it('API - Update a Board',
         {
            
         },
@@ -54,7 +54,7 @@ describe('Boards Test Suite',
         }
         )
 
-        it('Delete a Board',
+        it('API - Delete a Board',
         {
            
         },

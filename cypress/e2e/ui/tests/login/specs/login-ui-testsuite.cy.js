@@ -2,7 +2,7 @@ import { LoginPage } from "../pages/login-page"
 
 const loginPage = new LoginPage()
 
-describe('Login Test Suite',
+describe('UI - Login Test Suite',
     {
 
     },
@@ -12,7 +12,7 @@ describe('Login Test Suite',
             'password' : Cypress.env('credentials').userPassword
         }
 
-        it('Log in to Trello',
+        it('UI - Log in to Trello',
         {
             
         },

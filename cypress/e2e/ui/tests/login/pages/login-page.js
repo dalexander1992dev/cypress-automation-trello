@@ -1,4 +1,4 @@
-import { LoginLocators } from "../constants/login-ui-contants"
+import { LoginLocators } from "../constants/login-ui-constants"
 import { ButtonComponent } from "../../../components/button-component" 
 
 export class LoginPage {
