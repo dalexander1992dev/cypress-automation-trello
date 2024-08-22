@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y firefox-esr
 WORKDIR /e2e
 
 # Copy package.json and package-lock.json
-#COPY package.json package-lock.json ./ 
+COPY package.json package-lock.json ./ 
 
 # Install dependencies
 RUN npm install
