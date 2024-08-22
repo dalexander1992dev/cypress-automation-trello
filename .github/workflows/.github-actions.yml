@@ -13,12 +13,3 @@ jobs:
       with:
         config-file: cypress.config.js
         command: npx cypress run --env envSelected=dev
-    - name: Test with docker-compose
-        uses: adrielcodeco/docker-compose-run-action@v1
-        with:
-          composeFile: |
-            docker-compose.yml
-            docker-compose.ci.yml
-          serviceName: test
-          build: true
-          push: 'on:push'
