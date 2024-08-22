@@ -3,10 +3,14 @@ version: '3.8'
 services:
   cypress-electron:
     container_name: cypress-electron
-    image: cypress-image
+    build:
+      context: .
+      dockerfile: Dockerfile
     command: npx cypress run --env envSelected=dev --browser electron
 
   cypress-firefox:
     container_name: cypress-firefox
-    image: cypress-image
+    build:
+      context: .
+      dockerfile: Dockerfile
     command: npx cypress run --env envSelected=dev --browser firefox
