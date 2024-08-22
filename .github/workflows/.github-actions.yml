@@ -13,3 +13,8 @@ jobs:
       with:
         config-file: cypress.config.js
         command: npx cypress run --env envSelected=dev
+    - name: Upload Cypress Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-results
+        path: cypress/results/
