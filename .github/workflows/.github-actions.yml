@@ -8,13 +8,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
 
       - name: Use Docker Compose Action
         uses: docker/compose-action@v2
