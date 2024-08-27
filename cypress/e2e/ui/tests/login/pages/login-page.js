@@ -28,9 +28,9 @@ export class LoginPage {
 
     navigateToGoogleSignInPage(){
         cy.origin('https://id.atlassian.com',() => {
-        cy.get('[data-testid="username"]').type('dalexander1992.dev@gmail.com')
+        cy.get('[data-testid="username"]').type('cypresstrello@gmail.com')
         cy.contains('Continue').click()
-        cy.get('[data-testid="password-container"] input[data-testid="password"]').type('wsx691219D92')
+        cy.get('[data-testid="password-container"] input[data-testid="password"]').type('123Queso!')
         cy.get('#login-submit').click({force: true})
         })
     }
